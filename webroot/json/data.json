@@ -1,0 +1,272 @@
+[
+    {
+        "id": 12, 
+        "company": {
+            "name": "阿里云", 
+            "companyCode": "aliyun"
+        }, 
+        "area": [
+            {
+                "name": "杭州", 
+                "areaCode": "Region-TUHvUxiz"
+            }
+        ], 
+        "set": [
+            {
+                "cpu": 2, 
+                "rom": [
+                    {
+                        "num": 2, 
+                        "setCode": "InstanceType-mePa0XsY"
+                    }
+                ]
+            }, 
+            {
+                "cpu": 1, 
+                "rom": [
+                    {
+                        "num": 1, 
+                        "setCode": "instanceType-1234"
+                    }
+                ]
+            }
+        ], 
+        "net": [
+            {
+                "name": "成都warea-子网1", 
+                "netCode": "subnet-zfW9TICD"
+            }
+        ], 
+        "Os": [
+            {
+                "name": "Linux", 
+                "types": [
+                    {
+                        "name": "Centos 6.3", 
+                        "typeCode": "Image-38jfGRl5"
+                    }, 
+                    {
+                        "name": "netscarler", 
+                        "typeCode": "Image-n6Kg75BL"
+                    }, 
+                    {
+                        "name": "vRouter", 
+                        "typeCode": "Image-gO6GUHFi"
+                    }
+                ]
+            }, 
+            {
+                "name": "Windows Desktop", 
+                "types": [
+                    {
+                        "name": "Desktop_WIN7", 
+                        "typeCode": "Image-Q7au0JM9"
+                    }, 
+                    {
+                        "name": "Windows 7 64bit", 
+                        "typeCode": "Image-nvv2u3Xl"
+                    }
+                ]
+            }, 
+            {
+                "name": "Windows Server", 
+                "types": [
+                    {
+                        "name": "netscarler", 
+                        "typeCode": "Image-93PGGvq1"
+                    }
+                ]
+            }, 
+            {
+                "name": "应用软件", 
+                "types": [
+                    {
+                        "name": "Linux", 
+                        "typeCode": "Image-OICL50yQ"
+                    }, 
+                    {
+                        "name": "suse11sp1_64_20G_aliaegis_20150428", 
+                        "typeCode": "Image-wSjWy28z"
+                    }
+                ]
+            }
+        ]
+    }, 
+    {
+        "id": 13, 
+        "company": {
+            "name": "VMWARE", 
+            "companyCode": "vmware"
+        }, 
+        "area": [
+            {
+                "name": "成都", 
+                "areaCode": "Region-ZFfTd7BG"
+            }
+        ], 
+        "set": [
+            {
+                "cpu": 4, 
+                "rom": [
+                    {
+                        "num": 8, 
+                        "setCode": "InstanceType-hRlyzW77"
+                    }
+                ]
+            }
+        ], 
+        "net": [
+            {
+                "name": "成都warea-子网1", 
+                "netCode": "subnet-zfW9TICD"
+            }
+        ], 
+        "Os": [
+            {
+                "name": "Linux", 
+                "types": [
+                    {
+                        "name": "Centos 6.3", 
+                        "typeCode": "Image-38jfGRl5"
+                    }, 
+                    {
+                        "name": "netscarler", 
+                        "typeCode": "Image-n6Kg75BL"
+                    }, 
+                    {
+                        "name": "vRouter", 
+                        "typeCode": "Image-gO6GUHFi"
+                    }
+                ]
+            }, 
+            {
+                "name": "Windows Desktop", 
+                "types": [
+                    {
+                        "name": "Desktop_WIN7", 
+                        "typeCode": "Image-Q7au0JM9"
+                    }, 
+                    {
+                        "name": "Windows 7 64bit", 
+                        "typeCode": "Image-nvv2u3Xl"
+                    }
+                ]
+            }, 
+            {
+                "name": "Windows Server", 
+                "types": [
+                    {
+                        "name": "netscarler", 
+                        "typeCode": "Image-93PGGvq1"
+                    }
+                ]
+            }, 
+            {
+                "name": "应用软件", 
+                "types": [
+                    {
+                        "name": "Linux", 
+                        "typeCode": "Image-OICL50yQ"
+                    }, 
+                    {
+                        "name": "suse11sp1_64_20G_aliaegis_20150428", 
+                        "typeCode": "Image-wSjWy28z"
+                    }
+                ]
+            }
+        ]
+    }, 
+    {
+        "id": 14, 
+        "company": {
+            "name": "亚马逊", 
+            "companyCode": "aws"
+        }, 
+        "area": [
+            {
+                "name": "北京", 
+                "areaCode": "Region-3V8OytMv"
+            }
+        ], 
+        "set": [
+            {
+                "cpu": 2, 
+                "rom": [
+                    {
+                        "num": 4, 
+                        "setCode": "InstanceType-CrxEo2I4"
+                    }
+                ]
+            }
+        ], 
+        "net": [
+            {
+                "name": "成都warea-子网1", 
+                "netCode": "subnet-zfW9TICD"
+            }
+        ], 
+        "Os": [ ]
+    }, 
+    {
+        "id": 18, 
+        "company": {
+            "name": "索贝", 
+            "companyCode": "Sobey"
+        }, 
+        "area": [
+            {
+                "name": "成都", 
+                "areaCode": "Region-ZFfTd7BG"
+            }, 
+            {
+                "name": "北京", 
+                "areaCode": null
+            }
+        ], 
+        "set": [
+            {
+                "cpu": 2, 
+                "rom": [
+                    {
+                        "num": 2, 
+                        "setCode": "INSTANCETYPE-ryA9BbpC"
+                    }, 
+                    {
+                        "num": 4, 
+                        "setCode": "InstanceType-CrxEo2I4"
+                    }
+                ]
+            }
+        ], 
+        "net": [
+            {
+                "name": "成都warea-子网1", 
+                "netCode": "subnet-zfW9TICD"
+            }
+        ], 
+        "Os": [
+            {
+                "name": "Linux", 
+                "types": [
+                    {
+                        "name": "Centos 6.3", 
+                        "typeCode": "Image-38jfGRl5"
+                    }, 
+                    {
+                        "name": "netscarler", 
+                        "typeCode": "Image-n6Kg75BL"
+                    }
+                ]
+            }, 
+            {
+                "name": "Windows Desktop", 
+                "types": [
+                    {
+                        "name": "Desktop_WIN7", 
+                        "typeCode": "Image-Q7au0JM9"
+                    }
+                ]
+            }
+        ]
+    }
+]

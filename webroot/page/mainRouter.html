@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/styleBack.css">
+	
+</head>
+<body>
+	<div class="header-back clearfix">
+		<a href="##"><img src="/images/logo-back.png" class="logo-back"></a>
+		<ul class="header-nav pull-right">
+			<li class="remind">
+				<h2><i class="icon-envelope-alt"></i></h2>
+				<span class="num">1</span>
+			</li>
+			<li role="presentation" class="dropdown">
+        		<a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         		 工单
+         		 <span class="caret"></span>
+        		</a>
+		        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+		          <li><a href="#">Action</a></li>
+		          <li><a href="#">Another action</a></li>
+		          <li><a href="#">Something else here</a></li>
+		          <li role="separator" class="divider"></li>
+		          <li><a href="#">Separated link</a></li>
+		        </ul>
+			</li>
+			<li role="presentation" class="dropdown">
+        		<a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         		 帮助
+         		 <span class="caret"></span>
+        		</a>
+		        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+		          <li><a href="#">Action</a></li>
+		          <li><a href="#">Another action</a></li>
+		          <li><a href="#">Something else here</a></li>
+		          <li role="separator" class="divider"></li>
+		          <li><a href="#">Separated link</a></li>
+		        </ul>
+            </li>
+			<li>
+				<h2><i class="icon-off"></i></h2>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="clearfix wrap-nav button">
+		<div class="wrap-nav-left">
+			<div class="header-pic clearfix">
+				<a href="##">
+					<img class="pull-left" src="/images/user-header.png"  alt="">
+				</a>
+				<div>
+					<span class="wel">欢迎</span>
+					<br>
+					<span>乔·安德森</span>
+					<span class="info">1</span>
+				</div>
+			</div>
+			<div class="nav-total-open">
+				<i class="icon-align-justify"></i>
+			</div>
+			<div class="wrap-nav-detail">
+				<p class="title"><span class="none">产品与服务</span> <i class="icon-angle-down"></i></p>
+				<ul class="total">
+					<li class="active"><i class="icon-desktop"></i>&nbsp;&nbsp;计算机网络</li>
+					<li><i class="icon-save"></i>&nbsp;&nbsp;存储</li>
+					<li><i class="icon-medkit"></i>&nbsp;&nbsp;安全</li>
+					<li><i class="icon-eye-open"></i>&nbsp;&nbsp;监控</li>
+					<li><i class="icon-inbox"></i>&nbsp;&nbsp;数据库</li>
+					<li><i class="icon-credit-card"></i>&nbsp;&nbsp;云桌面</li>
+					<li><i class="icon-facetime-video"></i>&nbsp;&nbsp;媒体服务</li>
+				</ul>
+				<a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         		 <span class="none">用户中心</span>
+         		 <span class="caret"></span>
+        		</a>
+			</div>
+
+		</div>
+		<div class="wrap-nav-center " >
+			<div>
+				<h5>计算机与网络</h5>
+				<div class="title"><span>云服务器</span><i class="icon-angle-down"></i></div>
+			<ul class="center-nav total">
+				<li><a href="###">主机</a></li>
+				<li><a href="###">硬盘</a></li>
+				<li><a href="###">快照</a></li>
+				<li><a href="###">镜像</a></li>
+				<li class="active"><a href="###">路由器</a></li>
+				<li><a href="###">私有网络</a></li>
+				<li><a href="###">负载均衡</a></li>
+			</ul>
+			</div>
+			<span class="iconpic iconpic-spread"></span>
+		</div>
+		<div class="wrap-nav-right">
+			<div class="notice">
+				<h5 class="clearfix">公告 
+					<div class="pull-right">
+						<i class="icon-cog"></i>
+						<i class="icon-refresh"></i>
+						<i class="icon-chevron-up"></i>
+						<i class="icon-remove"></i>
+					</div>
+			    </h5>
+			    <p>推荐码申请进行中，分享使用得返利，点击
+			    	<a href="##">查看详情。</a>
+			    </p>
+			</div>	
+			<div class="wrap-manage">
+				<div class="top">
+					<span>实例管理</span>
+					<button class="btn btn-info">杭州</button>
+				</div>
+				<div class="center clearfix">
+					<button class="btn btn-addition"><i class="icon-refresh"></i>&nbsp;&nbsp;刷新</button>
+					<button class="btn btn-addition" data-toggle="modal" data-target="#create-modal"><i class="icon-plus"></i>&nbsp;&nbsp;新建</button>
+					<button class="btn btn-addition btn-shutdown" disabled="disabled" data-toggle="modal" data-target="#modal-start"><i class="icon-play text-light"></i>&nbsp;&nbsp;启动</button>
+					<button class="btn btn-addition btn-shutdown" disabled="disabled" data-toggle="modal" data-target="#modal-shutdown"><i class="icon-off text-light"></i>&nbsp;&nbsp;关机</button>
+					<div class="dropdown">
+		        		<a href="#" class="dropdown-toggle btn btn-addition text-right" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		         		 <span class="pull-left">更多操作</span>
+		         		 <span class="caret"></span>
+		        		</a>
+				        <ul class="dropdown-menu">
+				          <li><a href="#"><i class="icon-refresh"></i>&nbsp;&nbsp;重启</a></li>
+				          <li><a href="#"><i class="icon-tag"></i>&nbsp;&nbsp;绑定标签</a></li>
+				          
+				        </ul>
+		      		</div>
+		      		<div class="pull-right">
+		      			<span class="search">
+		      				<input type="text" placeholder="搜索">
+		      				<i class="icon-search"></i>
+		      			</span>
+		      			<button class="btn btn-addition dropdown" role="presentation" >
+		      				<a   href="#" class="dropdown-toggle" data-toggle="dropdown" ><i class="icon-tag"></i>&nbsp;&nbsp;标签</a>
+		      				<ul  class="dropdown-menu">
+					          <li><a href="#">测试环境</a></li>
+					          <li><a href="#">只是环境</a></li>
+					         
+					        </ul></button>
+		      		</div>
+				</div>
+				<div class="bot ">
+					<table id="table">
+						<thead>
+							<tr>
+								<td><input type="checkbox" class="all-check" id="checkbox">全选</td>
+								<td>ID</td>
+								<td>名称</td>
+								<td role="presentation" class="dropdown"><a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			         		 状态
+			         		    <span class="caret"></span>
+			        		    </a>
+				        	    <ul id="menu4" class="dropdown-menu" aria-labelledby="drop4">
+						          <li><a href="#">Action</a></li>
+						          <li><a href="#">Another action</a></li>
+						        </ul></td>
+								
+								<td  >
+			         		 类型
+			         		    </td>
+								<td>内网IP</td>
+								<td>公网IP</td>
+								<td>内网域名别名</td>
+								<td>警告状态</td>
+								<td>创建于</td>
+
+							</tr>
+
+						</thead>
+						<tbody>
+							<tr id="1">
+								<td>
+									<input type="checkbox">
+								</td>
+								<td>i-my7akfha;ofia12g</td>
+								<td>大发发</td>
+								<td class="text-danger"><span class="circle circle-stopped"></span>已关闭</td>
+								
+								<td>小型/</td>
+								<td>10.61.76.73</td>
+								<td></td>
+								<td></td>
+								<td>无监控</td>
+								<td>20分钟前</td>
+							</tr>
+							<tr id="2">
+								<td>
+									<input type="checkbox">
+								</td>
+								<td>i-my7akfha;ofia12g</td>
+								<td>大发发</td>
+								<td class="text-primary"><span class="circle circle-run circle-changing"></span>活跃</td>
+								
+								<td>小型/</td>
+								<td>10.61.76.73</td>
+								<td></td>
+								<td></td>
+								<td>无监控</td>
+								<td>20分钟前</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="clearfix">
+						<div class="pull-left page-show">
+							<span>每页显示:</span>
+							<div class="dropdown">
+				        		<a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				         		 10
+				         		 <span class="caret"></span>
+				        		</a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">30</a></li>
+						          <li><a href="#">20</a></li>
+						          <li><a href="#">1</a></li>
+						        </ul>
+				      			</div>
+				      			<span>条</span>
+						</div>
+						<div class="bs-example pull-right" data-example-id="disabled-active-pagination">
+						    <nav>
+						      <ul class="pagination">
+						        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+						        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+						        <li><a href="#">2</a></li>
+						        <li><a href="#">3</a></li>
+						        <li><a href="#">4</a></li>
+						        <li><a href="#">5</a></li>
+						        <li><a href="#" aria-label="Next"><span aria-hidden="true">下一页</span></a></li>
+						     </ul>
+						   </nav>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	
+	<!-- 右键弹框 -->
+	<div class="context-menu" id="context-menu">
+		<ul>
+		  <li id="close"><a href="#"><i class="icon-off"></i> 关闭</a></li>
+		  <li >
+		  	  <a href="#" class="context-primary"><i class="icon-tag"></i> 标签</a>
+			   <ul class="context-secondary">
+				<li id="bound"><a href="#"><i class="icon-plus"></i>绑定</a></li>
+				<li><a href="#"><i class="icon-minus"></i>解绑</a></li>
+			  </ul>	
+		  </li>
+		  
+		  <li>
+		  	<a href="#" class="context-primary"><i class="icon-globe"></i> 公网IP</a>
+			<ul class="context-secondary disabled">
+				<li ><a href="#"><i class="icon-plus"></i> 绑定</a></li>
+				<li><a href="#"><i class="icon-minus"></i> 解绑</a></li>
+			</ul>	
+		  </li>
+		 
+		  <li>
+			  <a href="#" class="context-primary"><i class="icon-resize-horizontal"></i> 私有网络 </a>
+			  <ul class="context-secondary">
+				<li><a href="#"><i class="icon-cog"></i> 更改配置</a></li>
+				<li><a href="#"><i class="icon-refresh"></i> 重置系统</a></li>
+			</ul>	
+		  </li>
+		  <li>
+			  <a href="#" class="context-primary"><i class="icon-th-list"></i> 内网域名别名 </a>
+			  <ul class="context-secondary">
+				<li><a href="#"><i class="icon-cog"></i> 更改配置</a></li>
+				<li><a href="#"><i class="icon-refresh"></i> 重置系统</a></li>
+			</ul>	
+		  </li>
+		  <li><a href="#"><i class="icon-bolt"></i> 修改防火墙</a></li>
+		  <li>
+			  <a href="#" class="context-primary">
+				<i class="icon-bell"></i> 告警策略
+			  </a>
+			  <ul class="context-secondary">
+				<li><a href="#"><i class="icon-plus"></i> 绑定</a></li>
+				<li><a href="#"><i class="icon-minus"></i> 解绑</a></li>
+			  </ul>	
+		  </li>
+		  <li id=""><a href="#"><i class="icon-cog"></i>扩容</a></li>
+		  <li id="modify"><a href="#"><i class="icon-pencil"></i> 修改</a></li>
+		  <li id="ri-delete"><a href="#"><i class="icon-trash"></i> 删除</a></li>
+		</ul>
+	</div>
+
+	<!-- 弹出层 -->
+	<div class="modal fade" id="modal-start" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<i class="icon-question-sign text-primary"></i>&nbsp;&nbsp;确认要启动机器<span class="text-primary"> a-e-86-i-1</span>？
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary" >确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 关机 -->
+	<div class="modal fade" id="modal-shutdown" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<i class="icon-question-sign text-primary"></i>&nbsp;&nbsp;确认要关闭机器<span class="text-primary"> a-e-86-i-1</span>？
+			<p class="text-center"><input type="checkbox">强制关机</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 修改 -->
+	<div class="modal fade" id="modal-modify" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<p class="name"><span >名称</span><input type="text"></p>
+			<p class="name"><span>描述</span><textarea ></textarea>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 标签绑定 -->
+	<div class="modal fade" id="modal-bound" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<p class="manage"><span class="new" id="built"><i class="icon-plus"></i>新建标签</span><span class="man"><i class="icon-cog"></i>管理标签</span></p>
+			<p class="mark"><input type="checkbox"><span>
+				<a class="resource-tag" data-tag-id="tag-5lzcac1p">生产环境</a>
+				tag-5lzcac1p&nbsp;&nbsp;已绑定资源: 2</span>
+			</p>
+			<p class="mark"><input type="checkbox"><span>
+				<a class="resource-tag" data-tag-id="tag-5lzcac1p">生产环境</a>
+				tag-5lzcac1p&nbsp;&nbsp;已绑定资源: 2</span>
+			</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 新建 -->
+	<div class="modal fade" id="modal-built" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<p class="name"><span >名称</span><input type="text"></p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 密钥加载 -->
+	<div class="modal fade" id="modal-diskfreash" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<p class="manage">详细了解如何使用SSH密钥访问主机。</p>
+			<p class="mark"><input type="checkbox">ssh_test
+				<span class="ml50">
+				kp-cfalks0p</span>
+			</p>
+			<p><input type="checkbox"> 加载SSH密钥以后，禁止密码登录。</p>
+			
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 密钥卸载 -->
+	<div class="modal fade" id="modal-diskunload" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<p class="manage">选择要从主机 <span class="id">i-z25zc879</span> 上卸载的 SSH 密钥<a href="#" class="close"><span class="icon-close icon-Large"></span></a></p>
+			<p class="mark"><input type="checkbox">ssh_test
+				<span class="ml50">
+				kp-cfalks0p</span>
+			</p>	
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 网络加入 -->
+	<div class="modal fade" id="modal-netadd" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<p class="manage">提示：切换网络后，您可能需要登录主机重启网络服务或者重启主机以使配置尽快生效。</p>
+			<p class="mark"><input type="checkbox">基础网络
+				<span class="ml50">
+				kp-cfalks0p</span>
+			</p >
+			<p class="mark"><input type="checkbox">test_Vswitch
+				<span class="ml50">
+				kp-cfalks0p</span>
+			</p>
+			
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 网络离开 -->
+	<div class="modal fade" id="modal-netremove" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<p class="manage">选择要离开主机 <span class="id">[i-z25zc879]</span>的私有网络<a href="#" class="close"><span class="icon-close icon-Large"></span></a></p>
+			<p class="mark"><input type="checkbox">基础网络
+				<span class="ml50">
+				kp-cfalks0p</span>
+			</p>
+
+			
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!--  制作成新映象 -->
+	<div class="modal fade" id="modal-mapping" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+		  	<p class="manage">合计:<span class="text-primary">¥0.023</span>每小时(合<span class="text-primary">¥16.56</span>每月）</p>
+			<p class="name"><span >名称</span><input type="text"></p>
+			<p class="name"><span>容量</span><input type="text" disabled>G
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary">确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- 删除 -->
+	<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">提示</h5>
+		  </div>
+		  <div class="modal-body">
+			<i class="icon-question-sign text-primary"></i>&nbsp;&nbsp;确认要删除机器<span class="text-primary"> a-e-86-i-1</span>？
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary" >确定</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<script src="/js/jQuery-2.1.3.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.mouse-content.js"></script>
+	<script src="/js/common-ui.js"></script>
+
+	<script>
+		$(function(){
+			//侧边栏
+			$(".nav-total-open").on('click', function(){
+				$(".wrap-nav").toggleClass("wrap-nav-left-click");
+			
+			});
+			$(' .wrap-nav-center .center-nav li').on('click', function(){
+				$(".wrap-nav").addClass("wrap-nav-left-click");
+			});
+			$(".iconpic-spread").on('click', function(){
+				$(".wrap-nav-center").toggleClass("wrap-nav-center-left");
+				$(".wrap-nav-right").toggleClass("wrap-nav-right-left");
+			})
+			//搜缩框
+			$('.wrap-nav .title').on('click', function(){
+				$(this).children("i").toggleClass("icon-angle-down");
+				$(this).children("i").toggleClass("icon-angle-up");
+				$(this).next("ul").slideToggle(300);
+			})
+			$(".wrap-nav .total li").on('click', function(){
+				$(this).parent().children().removeClass('active');
+				$(this).addClass('active');
+			})
+			
+
+			
+			
+			$("#checkbox").checkbox("choose");
+			//input 存在一个被选中状态
+			$("table input").on('click', function(){
+				if($("tbody input:checked").length>=1){
+				$(".center .btn-shutdown").attr('disabled',false);
+			  }else{
+			  	$(".center .btn-shutdown").attr('disabled',true);
+			  }
+			})
+			
+			$('#table tr').not('tr:first').contextMenu('context-menu', {
+
+			  bindings: {
+
+				'close': function(event) {
+				  $('#modal-shutdown').modal("show");
+				  console.log(event.id);
+
+				},
+				'restart':function(event){
+				  $('#modal-start').modal("show");
+				  console.log(event.id);
+				},
+				'modify':function(event){
+				  $('#modal-modify').modal("show");
+				  console.log(event.id);
+				},
+				'bound':function(event){
+				  $('#modal-bound').modal("show");
+				  console.log(event.id);
+				},
+				'built':function(event){
+				  $('#modal-built').modal("show");
+				  console.log(event.id);
+				},
+				'diskfreash':function(event){
+				  $('#modal-diskfreash').modal("show");
+				  console.log(event.id);
+				},
+				'diskunload':function(event){
+				  $('#modal-diskunload').modal("show");
+				  console.log(event.id);
+				},
+				'netadd':function(event){
+				  $('#modal-netadd').modal("show");
+				  console.log(event.id);
+				},
+				'netremove':function(event){
+				  $('#modal-netremove').modal("show");
+				  console.log(event.id);
+				},
+				'mapping':function(event){
+				  $('#modal-mapping').modal("show");
+				  console.log(event.id);
+				},
+				'ri-delete':function(event){
+				  $('#modal-delete').modal("show");
+				  console.log(event.id);
+				},
+			  }
+
+			});
+	   })
+	</script>
+</body>
+</html>

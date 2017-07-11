@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/jquery-ui-1.10.0.custom.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	
+	<script src="../js/jQuery-2.1.3.min.js"></script>
+	<script src="../js/angular.min.js"></script>
+	<script src="../js/controller/controller.js"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
+</head>
+<body >
+	<div class="container-wrap top-title">
+		<h2>云服务器ECS</h2>
+	</div>
+	<div class="container-wrap">
+		<div class="y-tab">
+			<ul>
+				<li class="y-first y-current">
+					<a href="##" class="y-item">包年包月</a>
+				</li>
+				<li class="">
+					<a href="##" class="y-item">包年包月</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="clearfix buy-theme" ng-controller="serviceController">
+			<div class="pull-left theme-left">
+				<p class="theme-row-message "><span class="icon"></span>若ECS用于网站web访问，请及时备案。若ECS用于SLB，请前往SLB新购页面购买带宽，ECS仅需保留少量带宽以便您管理。</p>
+				<table  >
+					<tr>
+						<td class="row-message-left">基本设置</td>
+						<td class="row-message-right">
+							<div class="ng-binding">
+								<div class="clearfix location-relative">
+									<label for="" class="pull-left">地域:</label>
+									<div class="position-hint">
+										<span>SSD云盘让业务响应0延迟，挂载IO优化的ECS实例，最大IOPS 20000，吞吐量256M/s</span>
+										<i class="triggel"></i>
+									</div>
+								   <div class="bk-form-row-cell">
+									<ul class="clearfix city">
+										<li class="active location-relative">杭州
+										</li>
+									</ul>
+									<p>不同地域之间的产品内网不互通；订购后不支持更换地域，请谨慎选择 教我选择>> <a href="##">查看我的产品地域</a></p>
+	
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left">I/O优化：</label>
+								   <div class="bk-form-row-cell">
+									<p><input type="checkbox"> IO优化实例 <span class=" icon-help-need">
+											<span class="icon icon-help"></span>
+											<i style="display: none;">选择支持I/O优化的实例，挂载SSD云盘时能够获得SSD云盘的全部存储性能，因为I/O优化为实例与云盘之间提供更好的网络能力，可保证SSD云盘存储性能的发挥；对于不支持I/O优化的实例，挂载SSD云盘时，通常最高可获得1000左右的IOPS性能。</i>
+										</span> </p>
+	
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left">CPU:</label>
+								   <div class="bk-form-row-cell">
+									<ul class="clearfix city">
+										<li ng-repeat="cpu in cpus" ng-click="selectCpu(cpu)" ng-class="{active:$first}">
+										{{cpu.cpu}}
+										
+										</li>
+										
+									</ul>
+									
+	
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left">内存:</label>
+								   <div class="bk-form-row-cell">
+									<ul class="clearfix city" ng-repeat="cpu in cpus | filter:selected">
+										<li ng-repeat="rom in cpu.rom" ng-click="selectRom(rom)" ng-class="{active:$first}">
+										{{rom}}
+										</li>
+									</ul>
+									<p>为了保证性能521MV不提供Windows操作系统</p>
+	
+								   </div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr >
+						<td class="row-message-left">网络</td>
+						<td class="row-message-right">
+							<div class="ng-binding">
+								<div class="clearfix">
+									<label for="" class="pull-left ">公用宽带:</label>
+								   <div class="bk-form-row-cell">
+									<ul class="clearfix city">
+										<li class="active">按固定带宽</li>
+										<li>按使用流量</li>
+										<span class="icon-help-need">
+											<span class="icon icon-help"> </span>
+											<i style="display: none;">按固定带宽的方式：需指定带宽的大小，如10Mbps(单位为bit)，费用合并在包年包月实例费用中一起支付。
+按使用流量的方式：是按实际发生的网络流量进行收费。先使用后付费，按小时计量计费。为了防止突然爆发的流量产生较高的费用，可以指定容许的最大网络带宽进行限制</i>
+										</span>
+										
+									</ul>
+									
+	
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left ">宽带:</label>
+								   <div class="slider-area bk-form-row-cell">
+										<div id="slider"></div>
+								   </div>
+								   <div class="amount pull-left">
+								   		<span id="amount"></span> M
+								   </div>
+								</div>
+					    </div>
+						</td>
+					</tr>
+					<tr >
+						<td class="row-message-left">镜像</td>
+						<td class="row-message-right">
+							<div class="ng-binding">
+								<div class="clearfix">
+									<label for="" class="pull-left ">镜像类型:</label>
+								   <div class="bk-form-row-cell">
+									<ul class="clearfix city">
+										<li class="active">公共镜像</li>
+										<li>镜像市场</li>
+										<span class="icon-help-need">
+											<span class="icon icon-help"></span>
+											<i style="display: none;">按固定带宽的方式：需指定带宽的大小，如10Mbps(单位为bit)，费用合并在包年包月实例费用中一起支付。
+按使用流量的方式：是按实际发生的网络流量进行收费。先使用后付费，按小时计量计费。为了防止突然爆发的流量产生较高的费用，可以指定容许的最大网络带宽进行限制</i>
+										</span>
+									</ul>
+									<p>公共镜像即基础操作系统。镜像市场在基础操作系统上，集成了运行环境和各类软件。</p>
+									
+	
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left ">公共镜像:</label>
+								   <div class="bk-form-row-cell">
+									<div class="bk-form-row-cell">
+									<div class="bk-select-group">
+										<div>
+											<div class="selected">
+												<span class="content">
+												选择操作系统类别
+											   </span>
+											<span class="bk-select-arrow"></span>
+											<ul style="display: none;">
+											<li>随机分配</li>
+											<li>随机分配</li>
+										</ul>
+										</div>
+										
+											<div class="selected">
+												<span class="content">
+												选择版本
+											</span>
+											<span class="bk-select-arrow"></span>
+											<ul style="display:none">
+											<li>随机分配</li>
+											<li>随机分配</li>
+										</ul>
+										</div>
+										<a href="##">教我选择&gt;&gt;</a>
+										
+
+										
+										
+									</div>
+	
+								   </div>
+									<p>选Linux送20GB系统盘，选Windows送40GB系统盘。</p>
+	
+								   </div>
+								</div>
+								
+					    </div>
+						</td>
+					</tr>
+
+					<tr >
+						<td class="row-message-left">存储</td>
+						<td class="row-message-right">
+							<div class="ng-binding">
+								<div class="clearfix">
+									<label for="" class="pull-left ">系统盘:</label>
+								   <div class="bk-form-row-cell">
+									<ul class="clearfix city">
+										<li class="active">普通云盘</li>
+										<span class="pan">系统盘挂载点：/dev/xvda</span>
+										<span class="icon-help-need"><span class="icon icon-help">
+											
+										</span>
+										<i style="display: none;">按固定带宽的方式：需指定带宽的大小，如10Mbps(单位为bit)，费用合并在包年包月实例费用中一起支付。
+按使用流量的方式：是按实际发生的网络流量进行收费。先使用后付费，按小时计量计费。为了防止突然爆发的流量产生较高的费用，可以指定容许的最大网络带宽进行限制</i></span>
+									</ul>
+									
+	
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left ">数据盘:</label>
+								   <div class="bk-form-row-cell">
+									   	<div class="nomal-disk show">
+									   		<span class="nomal-zhi">普通云盘</span>
+									   		<span class="disk-stage">
+									   			<input type="text" placeholder="5 - 2000">
+									   			<span>GB</span>
+									   		</span>
+									   		<span class="assign">
+									   			<span class="auto ">自动分配挂载点</span>
+									   			<ul style="display: none;">
+									   				<li>sasa</li>
+									   				<li>sasa</li>
+									   			</ul>
+									   		</span>
+									   		<span class="pull-right btn close" ng-click="close($event.target)">X</span>
+									   	</div>
+									   	<div class="nomal-disk hide">
+									   		<span class="nomal-zhi">普通云盘</span>
+									   		<span class="disk-stage">
+									   			<input type="text" placeholder="5 - 2000">
+									   			<span>GB</span>
+									   		</span>
+									   		<span class="assign">
+									   			<span class=" auto">自动分配挂载点</span>
+									   			<ul style="display: none;">
+									   				<li>sasa</li>
+									   				<li>sasa</li>
+									   			</ul>
+									   		</span>
+									   		<span class="pull-right btn close" ng-click="close($event.target)">X</span>
+									   	</div>
+									   	<div class="nomal-disk hide">
+									   		<span class="nomal-zhi">普通云盘</span>
+									   		<span class="disk-stage">
+									   			<input type="text" placeholder="5 - 2000">
+									   			<span>GB</span>
+									   		</span>
+									   		<span class="assign">
+									   			<span class="auto ">自动分配挂载点</span><ul style="display: none;">
+									   				<li>sasa</li>
+									   				<li>sasa</li>
+									   			</ul>
+									   		</span>
+									   		<span class="pull-right btn close" ng-click="close($event.target)">X</span>
+									   	</div>
+									   	<div class="nomal-disk hide">
+									   		<span class="nomal-zhi">普通云盘</span>
+									   		<span class="disk-stage">
+									   			<input type="text" placeholder="5 - 2000">
+									   			<span>GB</span>
+									   		</span>
+									   		<span class="assign">
+									   			<span class="auto">自动分配挂载点</span>
+									   			<ul style="display: none;">
+									   				<li>sasa</li>
+									   				<li>sasa</li>
+									   			</ul>
+									   		</span>
+									   		<span class="pull-right btn close" ng-click="close($event.target)">X</span>
+									   	</div>
+										<div class="add-row add-row-cell">
+											<span class="add" ng-click="add($event.target)">+</span>
+											<span>增加一块</span>
+											<span class="pan">您还可以选<i>{{panNum}}</i>块</span>
+										</div>
+								   </div>
+								</div>
+					    </div>
+						</td>
+					</tr>
+
+					<tr >
+						<td class="row-message-left">密码</td>
+						<td class="row-message-right">
+							<div class="ng-binding">
+								<div class="clearfix">
+									<label for="" class="pull-left ">设置密码:</label>
+								   <div class="bk-form-row-cell">
+									<ul class="clearfix city">
+										<li class="active">立即设置</li>
+										<li>创建后设置</li>
+									</ul>
+									<p>请牢记您所设置的密码，如遗忘可登录ECS控制台重置密码。</p>
+									
+	
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left ">登录密码:</label>
+								   <div class="bk-form-row-cell">
+										<input type="text"><span class="pan">8-30个字符，同时包含大小写字母和数字，不支持特殊符号</span>
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left ">确认密码:</label>
+								   <div class="bk-form-row-cell">
+										<input type="text">
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left ">实例名称：</label>
+								   <div class="bk-form-row-cell">
+										<input type="text"><span class="pan">名称须为2-128个字符，以大小写字母或中文开头，不支持字符@/:="{[]}和空格</span>
+								   </div>
+								</div>
+					    </div>
+						</td>
+					</tr>
+					<tr >
+						<td class="row-message-left">购买量</td>
+						<td class="row-message-right">
+							<div class="ng-binding">
+								<div class="clearfix">
+									<label for="" class="pull-left ">购买时长:</label>
+								   <div class="bk-form-row-cell">
+										<input type="number" value="1" min="0" max="12" ng-model="month" /> 月
+								   </div>
+								</div>
+								<div class="clearfix">
+									<label for="" class="pull-left ">数量:</label>
+								   
+									  <div class="bk-form-row-cell">
+									  	<input type="number" min="0" max="12" value=“1” ng-model="pan" /> 台
+									  </div>
+								</div>
+					    </div>
+						</td>
+					</tr>
+				</table>
+				
+			</div>
+
+
+			<div class="pull-right theme-right">
+				<div class="theme-right-mian ">
+					<p class="theme-buy">购买清单 <i>0</i> 台</p>
+					<a class="btn btn-primary" href="">批量购买</a>
+					<a class="btn btn-primary" href="">查看详情</a>
+				</div>
+				<div class="theme-right-mian ">
+					<p class="theme-buy">当前配置 </p>
+					<ul class="goods-detail">
+						<li>
+							<span class="deleft">地域：</span>
+							<span class="deright">北京（可用区随机分配）</span>
+
+						</li>
+						<li>
+							<span class="deleft">配置：</span>
+							<span class="deright">CPU{{configCpu}}、内存{{configRom}}</span>
+
+						</li>
+						<li>
+							<span class="deleft">镜像：</span>
+							<span class="deright">-</span>
+
+						</li>
+						<li>
+							<span class="deleft">存储：</span>
+							<span class="deright">-</span>
+
+						</li>
+						<li>
+							<span class="deleft">网络：</span>
+							<span class="deright">带宽<span id="bandwidth"></span>Mbps（经典网络）</span>
+
+						</li>
+						<li>
+							<span class="deleft">购买量：</span>
+							<span class="deright">{{month}}个月 X {{pan}}台</span>
+
+						</li>
+						<li>
+							<span class="icon-help-need">
+											
+							<span>免费开通云盾服务 </span>
+							<span class="icon-help-need icon-help-need-left">
+								<span class="icon  icon-help ">
+							
+								</span>
+								<i style="display: none;">云盾可为您检测服务器的安全隐患，同时提供主流类型的网络攻击防御。</i>
+							</span>
+						</li>
+						<li>
+							<span class="deleft">配置费用：</span><br>
+							<span class="price">￥{{totalPrice}}</span>
+
+						</li>
+					</ul>
+					<a class="btn btn-primary" href="">立即购买</a>
+					<a class="btn btn-primary" href="">加入清单</a>
+					<p class="pan">实际扣费以账单为准<a href="##">购买和计费说明>></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+	//主机购买
+		$('.bk-form-row-cell').on('click',"li",function(){
+			$(this).parent().children().removeClass('active');
+			$(this).addClass('active');
+		});
+		 $( "#slider" ).slider({
+	      value: 1,
+	      min:0,
+	      max:500,
+	      step:1,
+	      orientation: "horizontal",
+	      range: "min",
+	      animate: true,
+	      slide:function(event, ui){
+	      	$( "#amount" ).html(ui.value );
+			 $("#bandwidth").html(ui.value);
+	      }
+	    });
+		 $("#amount").html($("#slider").slider("value"));
+		 $("#bandwidth").html($("#slider").slider("value"));
+
+
+		 //点击其他地方当前显示原始隐藏
+		$(function(){
+			 $('.buy-theme').on("click",function(e){
+				var target = $(e.target);
+				if(target.closest(".icon-help").length == 0 && target.closest(".icon-help-need i").length == 0){
+				    $(".icon-help-need i").hide();
+				}
+				if(target.closest(".nomal-disk .assign .auto").length == 0 ){
+				    $(".nomal-disk .assign ul").hide();
+				}
+				if(target.closest(".bk-select-group .selected").length == 0 ){
+				    $(".bk-select-group ul").hide();
+				}
+                
+            });
+             
+			//弹出框疑问点击
+			$('.icon-help').on('click', function(){
+
+				if($(this).next().css('display') == 'none'){
+					$('.icon-help').next().hide();
+					$(this).next().show();
+				}else{
+					
+					$(this).next().hide();
+				}
+
+			});
+			//数据盘
+			$('.bk-form-row-cell').on('click','.auto',function(){
+				$('.nomal-disk .assign ul').hide();
+				$(this).next().show();
+				$(this).next().children().on('click',function(){
+					$(this).parent().hide();
+					$(this).parent().prev().html($(this).html());
+				});
+			});
+			//镜像选择版本
+			$('.bk-select-group .selected').on('click', function(){
+				if($(this).children('ul').css('display') == 'block'){
+					$(this).children('ul').hide();
+				}else{
+					$(this).children('ul').show();
+				}
+			});
+			$('.bk-select-group ul li').on('click', function(){
+				$(this).parent().prev().prev().html($(this).html());
+			});
+		})
+	</script>
+</body>
+</html>

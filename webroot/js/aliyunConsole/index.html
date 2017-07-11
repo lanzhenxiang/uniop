@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    管理终端
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- Apple iOS Safari settings -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" type="text/css"
+        href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="scripts/include/base.css" title="plain">
+  <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    var INCLUDE_URI = 'scripts/include/';
+  </script>
+  <script src="scripts/include/util.js"></script>
+  <script src="scripts/include/des.js"></script>
+  <script src="scripts/include/webutil.js"></script>
+  <script src="scripts/include/base64.js"></script>
+  <script src="scripts/include/websock.js"></script>
+  <script src="scripts/include/inflator.js"></script>
+  <script src="scripts/include/keysym.js"></script>
+  <script src="scripts/include/keysymdef.js"></script>
+  <script src="scripts/include/keyboard.js"></script>
+  <script src="scripts/include/input.js"></script>
+  <script src="scripts/include/display.js"></script>
+  <script src="scripts/include/jsunzip.js"></script>
+  <script src="scripts/include/rfb.js"></script>
+
+  <style>
+    #noVNC_screen{
+      line-height: 0px;
+      font-size:0px;
+      padding:6px;
+    }
+  </style>
+</head>
+
+<body style="margin: 5px;">
+<?php
+  print_r($data);
+?>
+<div class="row">
+  <div class="col-sm-3">
+    <label>VNC地址：</label>
+    <input type="text" id="vncAddr" name="vncAddr" value="<?php echo $data["url"]?>"/>
+  </div>
+  <div class="col-sm-3">
+    <label>密码：</label>
+    <input type="text" id="password" name="password"/>
+  </div>
+  <div class="col-sm-4">
+    <button class="btn-sm btn-default" id="btnConnect">连接</button>
+  </div>
+  <div class="col-sm-12">
+    <div id="noVNC_status" class="pull-left" style="padding-left:12px;">
+      载入中……
+    </div>
+    <div id="noVNC_screen">
+      <canvas id="noVNC_canvas" width="640px" height="400px">
+        浏览器版本太低。请更新浏览器。
+      </canvas>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="scripts/main.js"></script>
+<script>
+ $(function() {
+   connectToVncServer();
+ })
+</script>
+</body>
+</html>

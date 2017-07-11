@@ -1,0 +1,151 @@
+<?php
+/** 
+* 搜索引擎 关键字
+* 
+* 
+* @author XingShanghe<xingshanghe@gmail.com>
+* @date  2015年9月6日下午3:04:15
+* @source seo.php
+* @version 1.0.0 
+* @copyright  Copyright 2015 sobey.com 
+*/ 
+return [
+    'Seo'  =>  [
+        'Home_display'=>[
+            'title'=>'中国蓝云主机',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'Home_display_test'=>[
+            'title'=>'测试页面',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'Accounts_login'=>[
+            'title'=>'用户登录',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+            
+        'Console_Home_display'=>[
+            'title'=>'控制中心',
+            'keywords'=>'控制中心',
+            'description'=>'控制中心',  
+        ],
+        'Xdesktop_Home'=>[
+            'title'=>'使用桌面',
+            'keywords'=>'使用桌面',
+            'description'=>'使用桌面',
+        ],
+        'console_Home_index'=>[
+            'title'=>'控制中心首页',
+            'keywords'=>'控制中心',
+            'description'=>'控制中心',
+        ],
+        'console_Network_lists'=>[
+            'title'=>'计算与网络_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_lists_hosts'=>[
+            'title'=>'计算与网络_主机_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_add_hosts'=>[
+            'title'=>'计算与网络_主机_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_lists_disks'=>[
+            'title'=>'计算与网络_硬盘_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_add_disks'=>[
+            'title'=>'计算与网络_硬盘_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_lists_images'=>[
+            'title'=>'计算与网络_镜像_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_add_images'=>[
+            'title'=>'计算与网络_镜像_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_lists_eip'=>[
+            'title'=>'计算与网络_公网ip_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_add_eip'=>[
+            'title'=>'计算与网络_公网ip_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_lists_subnet'=>[
+            'title'=>'计算与网络_子网_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_add_subnet'=>[
+            'title'=>'计算与网络_子网_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_lists_elb'=>[
+            'title'=>'计算与网络_负载均衡_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_add_elb'=>[
+            'title'=>'计算与网络_负载均衡_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_lists_router'=>[
+            'title'=>'计算与网络_路由器_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Network_add_router'=>[
+            'title'=>'计算与网络_路由器_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Security_lists'=>[
+            'title'=>'安全_防火墙_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Security_lists_firewall'=>[
+            'title'=>'安全_防火墙_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Security_lists_firewalltemplate'=>[
+            'title'=>'安全_防火墙模板_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Desktop_lists'=>[
+            'title'=>'云桌面_列表_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'console_Desktop_add_desktop'=>[
+            'title'=>'云桌面_新增_控制中心',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+        'xdesktop_Home_index'=>[
+            'title'=>'云桌面',
+            'keywords'=>'',
+            'description'=>'',
+        ],
+    ]        
+];

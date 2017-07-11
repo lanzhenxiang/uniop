@@ -1,0 +1,100 @@
+﻿ul,ol{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.service-main{
+	position: relative;
+	width: 100%;
+	min-width: 1200px;
+}
+.service-sidebar{
+	width:15%;
+	padding:25px 0 0;
+	background:#232B2D;
+}
+.service-sidebar-content > h4{
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left: 50px;
+	margin-bottom: 15px;
+	color:#fff;
+}
+.service-sidebar-major{
+	color:#aaa;
+}
+.service-sidebar-major > h5{
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left: 50px;
+	cursor:pointer;
+	color: #fff;
+}
+.service-sidebar-major > h5 > i{
+	margin-right: 20px;
+}
+.service-sidebar-secondary a{
+	display:block;
+	width:100%;
+	height:100%;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left: 50px;
+	color:#666;
+}
+.service-sidebar-secondary a:hover{
+	text-decoration:none;
+	color:#fff;
+}
+.service-sidebar-secondary li:hover{
+	background:#23BAB5;
+}
+.service-content{
+	width:100%;
+	padding:70px 0 0;
+}
+.service-promote{
+	width:1200px;
+	padding-bottom:30px;
+	margin:0 auto;
+}
+.service-promote h1{
+	padding:25px 0;
+}
+.service-promote p{
+	width:540px;
+	margin-bottom:20px;
+	color:#666;
+}
+.service-content-navi li{
+	float:left;
+	width:130px;
+	padding:10px 0;
+	border-top:2px solid #d2d2d2;
+	border-bottom:1px solid #d2d2d2;
+	border-left:1px solid #d2d2d2;
+	background:#f6f6f6;
+	cursor:pointer;
+	color: #333;
+}
+.service-content-navi .active{
+	border-top:2px solid #23BAB5;
+	background:#fff;
+}
+.service-content-navi li a{
+	color:#333;
+}
+.service-content-navi li:last-child{
+	border-right:1px solid #d2d2d2;
+}
+/*產品詳情*/
+.service-promote.product-con .theme-left{
+    width: 900px;
+    font-size: 14px;
+}
+.service-promote.product-con p{
+    width: 97%;
+}
+.service-promote.product-con #currentDetail>img{
+    width: 97%;
+}
