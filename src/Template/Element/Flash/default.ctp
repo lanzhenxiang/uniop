@@ -4,4 +4,4 @@ if (!empty($params['class'])) {
     $class .= ' ' . $params['class'];
 }
 ?>
-<div class="<?= h($class) ?>"><?= h($message) ?></div>
+<div id="flash-msg" class="<?= h($class) ?>"><?= h($message) ?>111111111111111111111111111</div>

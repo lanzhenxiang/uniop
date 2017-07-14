@@ -18,6 +18,7 @@ use Cake\Error\Debugger;
 ?>
 
 <?php
+debug($error);exit;
 foreach ($error->getTrace() as $i => $stack):
     $excerpt = $params = [];
 

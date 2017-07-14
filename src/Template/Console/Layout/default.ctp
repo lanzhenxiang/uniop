@@ -18,7 +18,7 @@
 
   <!-- Bootstrap CSS -->
 
-  <?= $this->Html->css(['normalize.css','bootstrap.css','bootstrap-table.css','jquery-ui-1.10.0.custom.css','font-awesome.min.css','style.css','styleBack.css','pnotify.core.min.css','swiper.css']); ?>
+  <?= $this->Html->css(['normalize.css','bootstrap.css','bootstrap-table.css','jquery-ui-1.10.0.custom.css','font-awesome.min.css','style.css','styleBack.css','pnotify.core.min.css','swiper.css','sb.css']); ?>
   <?= $this->Html->script('jQuery-2.1.3.min.js'); ?>
 
 
@@ -30,62 +30,14 @@
   <?= $this->element('header'); ?>
   <div class="clearfix wrap-nav button">
     <?= $this->element('left'); ?>
+    <div class="wrap-nav-right wrap-index-page">
+    <?=$this->Flash->render();?>
+    </div>
     <?= $this->fetch('content') ?>
   </div>
 
   <!-- jQuery first, then Bootstrap JS. -->
   <?= $this->Html->script(['jQuery-2.1.3.min.js','bootstrap.min.js','bootstrap-table.js','jquery-ui-1.10.0.custom.min.js','plugins.js','jquery.mouse-content.js','jquery.cookie.js','Chart.js','all-page.js','socket/swfobject.js','socket/web_socket.js','pnotify.core.min.js','jquery.cropit.js','swiper.jquery.min.js','validator.bootstrap.js','jQuery.fn.extend.js','common/bootstrap-lists.formatter.js','layer/layer.js']); ?>
-
-  <script type="text/javascript" src="/js/socket/reconnecting-websocket.min.js"></script>
-  <script>
-    WEB_SOCKET_SWF_LOCATION = "/js/socket/WebSocketMain.swf";
-    WEB_SOCKET_DEBUG = false;
-    var tmpTag = 'https:' == document.location.protocol ? false : true;
-    if( "https:" == document.location.protocol ){
-      pro ="wss://"+window.location.host
-    }else{
-      pro = "ws://"+window.location.host
-    }
-	  var conn = new ReconnectingWebSocket(pro+"/ws?uid=<?=$this->Session->read('Auth.User.id')?>");
-      //var conn = new WebSocket("ws://10.10.28.135:9091/ws?uid=<?=$this->Session->read('Auth.User.id')?>");
-      // Set event handlers.
-      conn.onopen = function(e) {
-            //  alert(e);
-            //console.log("open");
-          };
-
-          conn.onmessage = function(e) {
-        //console.log(e);
-        data = jQuery.parseJSON(e.data)
-        new PNotify({
-          text:data.Msg,
-          type:data.MsgType,
-          styling: "bootstrap3",
-          delay :"8000"
-        });
-        
-        try{
-          if(notifyCallBack&&typeof(notifyCallBack)=="function"){
-            notifyCallBack(data);
-            console.log(data);
-          }
-        }catch(e){
-          //console.log("error-:"+e);
-        }
-        // if(data.MsgType == "success"){
-        //   window.location.reload();
-        // }
-      };
-      conn.onclose = function() {
-          //console.log("WebSocket closed and retry connect")
-          // conn = new WebSocket(pro+"/ws?uid=<?=$this->Session->read('Auth.User.id')?>");
-        };
-        conn.onerror = function() {
-      //alert("onerror");
-    };
-
-
-  </script>
   <?= $this->fetch('script_last') ?>
 </body>
 

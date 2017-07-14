@@ -2783,4 +2783,38 @@ li:nth-child(4) .total-chart-sharp h1{
 .host-add-button.active{
 	background: rgb(68, 210, 228);
 	color: rgb(255, 255, 255);
-} 
+}
+
+.message{
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+    color:#FFF;
+}
+
+.error{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.success{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.warning{
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.title-center{
+    text-align:center;
+    margin: 0 auto;
+}
+.detail-table-title >td,.detail-table-title{
+    background:#f9f9f9;
+    color:#666 !important;
+}

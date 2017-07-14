@@ -75,7 +75,7 @@ class AccountsController extends SobeyController
         //根据token登录
         $this->_loginByToken();
 
-        $this->hiveLogin();
+       // $this->hiveLogin();
 
         $this->userLogin();
     }
@@ -85,7 +85,7 @@ class AccountsController extends SobeyController
      */
     public function login()
     {
-        $this->layout = 'login';
+        $this->viewBuilder()->layout('login');
         $popedomname = '';
         $home = new HomeController();
         $this->set('good_category', $home->getCategoeyGoodsData());

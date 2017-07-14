@@ -52,6 +52,8 @@ use Cake\Network\Request;
 use Cake\Routing\DispatcherFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+use Cake\I18n\Time;
+use Cake\I18n\Date;
 
 /**
  * Read configuration file and inject configuration into various
@@ -148,7 +150,8 @@ Email::configTransport(Configure::consume('EmailTransport'));
 Email::config(Configure::consume('Email'));
 Log::config(Configure::consume('Log'));
 Security::salt(Configure::consume('Security.salt'));
-
+Time::setJsonEncodeFormat('yyyy-MM-dd HH:mm:ss');
+Date::setJsonEncodeFormat('yyyy-MM-dd');  // For any mutable Date
 /**
  * The default crypto extension in 3.0 is OpenSSL.
  * If you are migrating from 2.x uncomment this code to

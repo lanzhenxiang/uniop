@@ -27,11 +27,9 @@
     <?= $this->fetch('script') ?>
 </head>
 <body lang="zh">
-    <?= $this->element('header'); ?>
-    
+
     <?= $this->fetch('content') ?>
     
-    <?= $this->element('footer'); ?>
     <!-- jQuery first, then Bootstrap JS. -->
     <?= $this->Html->script(['jQuery-2.1.3.min.js','bootstrap.min.js','plugins.js']); ?>
     <?= $this->fetch('script_last') ?>

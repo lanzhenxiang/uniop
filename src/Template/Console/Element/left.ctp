@@ -12,12 +12,12 @@
             ?>
         </div>
         <div class="header-info pull-left">
-            <?php if($this->Session->read('Auth.User.id')){ ?>
+            <?php if($this->request->session()->read('Auth.User.id')){ ?>
             <span class="wel">欢迎</span>
             <br>
-            <span><?php echo $this->Session->read('Auth.User.username');  ?></span>
+            <span><?php echo $this->request->session()->read('Auth.User.username');  ?></span>
             <br/>
-            <span><?php echo $this->Session->read('Auth.User.department_name');  ?></span>
+            <span><?php echo $this->request->session()->read('Auth.User.department_name');  ?></span>
             <?php }else{ ?>
                 <span>请登录</span>
             <?php } ?>
@@ -31,7 +31,8 @@
             if (isset($_console_category) && !empty($_console_category)){
 
                 foreach ($_console_category as $key => $value) {
-                    if (in_array($value['popedom_code'], $this->Session->read('Auth.User.popedomname'))) {
+                    //if (in_array($value['popedom_code'], $this->request->session()->read('Auth.User.popedomname'))) {
+                    if (true) {
                         ?>
                         <div class="main-left">
                         <p class="title"><span
@@ -45,8 +46,8 @@
                                 <?php
                                 foreach ($value['children'] as $kk => $vv) {
 
-                                    if (in_array($vv['popedom_code'], $this->Session->read('Auth.User.popedomname'))) {
-                                       
+                                    //if (in_array($vv['popedom_code'], $this->request->session()->read('Auth.User.popedomname'))) {
+                                   if (true) {
                                         ?>
                                         <a href="<?= $this->Url->build($vv['url']) ?>">
                                             <li id="<?php echo $vv['name'];?>" <?php
