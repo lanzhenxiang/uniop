@@ -23,6 +23,20 @@ class HardwareAssetsTable extends SobeyTable{
             'cascadeCallbacks' => true
         ]);
 
+        $this->hasMany('HardwareInstead',[
+            'className' => 'HardwareInstead',
+            'foreignKey' => 'assets_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true
+        ]);
+
+        $this->hasMany('HardwareRepair',[
+            'className' => 'HardwareRepair',
+            'foreignKey' => 'assets_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true
+        ]);
+
         $this->addBehavior('Timestamp', [
             'events' => [
                 'Model.beforeSave' => [

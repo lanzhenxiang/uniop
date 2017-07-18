@@ -50,7 +50,7 @@ Router::scope('/', function ($routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     //$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-    $routes->connect('/', ['prefix'=>'console','controller' => 'Home', 'action' => 'index']);
+    $routes->connect('/', ['prefix'=>'console','controller' => 'Ecs', 'action' => 'index']);
     $routes->connect('/test',['controller'=>'Home','action'=>'test']);
     $routes->connect('/special/*',['controller' => 'Home', 'action' => 'display']);
 
@@ -92,7 +92,7 @@ Router::prefix('console', function ($routes) {
     
     $routes->extensions(array('json'));
     // All routes here will be prefixed with `/console`
-    $routes->connect('/', ['controller' => 'Home', 'action' => 'index']);
+    $routes->connect('/', ['controller' => 'Ecs', 'action' => 'index']);
         
     // And have the prefix => admin route element added.
     $routes->fallbacks('DashedRoute');

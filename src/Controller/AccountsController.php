@@ -87,9 +87,6 @@ class AccountsController extends SobeyController
     {
         $this->viewBuilder()->layout('login');
         $popedomname = '';
-        $home = new HomeController();
-        $this->set('good_category', $home->getCategoeyGoodsData());
-        $this->set('_number', parent::readCookieByNumber());
         if ($this->request->is('post')) {
             $this->request->session()->destroy();
             $account = $this->Auth->identify();
@@ -156,7 +153,7 @@ class AccountsController extends SobeyController
                 $popedomname = $response_arr['data'];
             }
         }
-        $this->Cookie->write('logining', 1);
+//        $this->Cookie->write('logining', 1);
         $account = $this->request->session()->read('Auth.User');
         if (!empty($popedomname)) {
             $account['popedomname'] = $popedomname;

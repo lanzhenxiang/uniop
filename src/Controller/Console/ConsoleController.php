@@ -37,28 +37,6 @@ class ConsoleController extends  AccountsController
         //获取创建资源的租户id,(如果租户不具备跨租户权限，且未垮租户，则为当前登录用户的租户ID)
         $this->_createResourceDeptId = $this->getOwnByDepartmentId();
     }
-//树形图导航
-    public  function left($type='desktop'){
-        $menu_table=TableRegistry::get('DesktopLeftMenu');
-        if($type=='desktop') {
-            $first = $menu_table->find()->where(array(
-                'visibility' => 1,
-                'parent_id' => 0,
-                'type' => $type
-            ))->order('sort')->toArray();
-            //第一级
-            $this->set('first', $first);
-            $second = $menu_table->find()->where(array(
-                'visibility' => 1,
-                'parent_id <>' => 0,
-                'type' => $type
-            ))->order('sort')->toArray();
-            $this->set('second', $second);
-        }else if($type=='network'){
-            $menu=$menu_table->find('tree')->where(array('type'=>$type,'visibility'=>1))->toArray();
-            $this->set('left_menu',$menu);
-        }
-    }
 
     /**
      * 获取分类菜单数据

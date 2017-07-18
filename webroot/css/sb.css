@@ -436,3 +436,12 @@ table.dataTable thead .sorting:after {
 .show-grid .content{
     background:#fff !important;
 }
+.show-grid-content [class^="col-"] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff !important;
+}
+.show-grid-content {
+    margin: 0;
+}

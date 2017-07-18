@@ -44,8 +44,6 @@ class EcsController extends ConsoleController
     public function initialize()
     {
         parent::initialize();
-        parent::left('network');//树形图导航
-
         $this->loadComponent('Excel');
 
     }
@@ -127,7 +125,16 @@ class EcsController extends ConsoleController
     {
         $hardwareAssetsTable = TableRegistry::get('HardwareAssets');
         $where['assets_no'] = $assets_no;
-        $entity = $hardwareAssetsTable->find()->contain(['HardwareAssetsEcs'])->where($where)->first();
+        $entity = $hardwareAssetsTable->find()->contain(['HardwareAssetsEcs','HardwareInstead','HardwareRepair'])->where($where)->first();
+        $this->set('ecs',$entity);
+    }
+
+    public function printPage($assets_no)
+    {
+        $this->viewBuilder()->layout('print');
+        $hardwareAssetsTable = TableRegistry::get('HardwareAssets');
+        $where['assets_no'] = $assets_no;
+        $entity = $hardwareAssetsTable->find()->contain(['HardwareAssetsEcs','HardwareInstead','HardwareRepair'])->where($where)->first();
         $this->set('ecs',$entity);
     }
 

@@ -1,3 +1,4 @@
+<?= $this->Html->css('bootstrap-datetimepicker.min.css'); ?>
 
 <div class="wrap-nav-right wrap-index-page">
   <div class="index-total section">
